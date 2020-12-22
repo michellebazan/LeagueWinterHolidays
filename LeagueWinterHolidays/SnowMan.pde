@@ -52,7 +52,9 @@ public class SnowMan {
     this.inverted = color(255 - red(bodyColor), 255 - green(bodyColor), 255 - blue(bodyColor));
   }
 
-  private void drawBody(){
+  public void drawBody(){
+    push();
+    
     noStroke();
     radiusBot = int(175 * scale);
     radiusMid = int(140 * scale);
@@ -64,9 +66,11 @@ public class SnowMan {
     ellipse(this.x, offsetBot, 2.15*radiusBot, 2*radiusBot);
     ellipse(this.x, offsetMid, 2.15*radiusMid, 2*radiusMid);
     ellipse(this.x, offsetTop, 2*radiusTop, 2*radiusTop);
+    
+    pop();
   }
   
-  private void drawNose(){
+  public void drawNose(){
     push();
     
     float noseHeight = 0.2 * radiusTop;
@@ -78,7 +82,7 @@ public class SnowMan {
     pop();
   }
   
-  private void drawEyesMouth(){
+  public void drawEyesMouth(){
     push();
     
     float radiusEyes = 0.25 * radiusTop; 
@@ -99,7 +103,7 @@ public class SnowMan {
     pop();
   }
   
-  private void drawHat(){
+  public void drawHat(){
     push();
     
     float brimWidth = 2.5 * radiusTop;
@@ -114,7 +118,7 @@ public class SnowMan {
     pop();
   }
   
-  private void drawArms(){
+  public void drawArms(){
     push();
     
     float armY = offsetMid - (0.3 * radiusMid);
@@ -132,7 +136,7 @@ public class SnowMan {
     pop();
   }
   
-  private void drawButtons(){
+  public void drawButtons(){
     push();
     
     float buttonSize = 0.25 * radiusMid;
